@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Postal Point</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="header">
+        <h1>FIND YOUR NOWPOST POINT</h1>
+        <p>Locate a NowPost point nearby for collecting or dropping off parcels.</p>
+        
+        <!-- Map Style Dropdown -->
+        <div class="dropdown-container">
+            <label for="mapStyle" class="dropdown-label">Map Style:</label>
+            <select id="mapStyle" class="dropdown-select">
+                <option value="streets">Streets</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="outdoors">Outdoors</option>
+                <option value="satellite">Satellite</option>
+                <option value="satelliteStreets">Satellite Streets</option>
+                <option value="navigationDay">Navigation Day</option>
+                <option value="navigationNight">Navigation Night</option>
+            </select>
+        </div>
+
+        <div class="toggle-buttons">
+            <button id="collectingBtn" class="active">I'M COLLECTING A PARCEL</button>
+            <button id="droppingBtn">I'M DROPPING OFF A PARCEL</button>
+        </div>
+
+        <div class="mobile-tabs">
+            <button id="listViewBtn" class="active">List View</button>
+            <button id="mapViewBtn">Map View</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search location">
+            <button id="search-btn">🔍</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar" id="locationList">
+            <!-- Location list items will be dynamically inserted here -->
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
